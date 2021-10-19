@@ -121,9 +121,9 @@ async def playlist(client, message):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("• Gʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}"),
+                InlineKeyboardButton("•Pytg[support]", url=f"https://t.me/{GROUP_SUPPORT}"),
                 InlineKeyboardButton(
-                    "• Cʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"
+                    "• PyTg[update]", url=f"https://t.me/{UPDATES_CHANNEL}"
                 ),
             ]
         ]
@@ -134,7 +134,7 @@ async def playlist(client, message):
         return
     queue = que.get(message.chat.id)
     if not queue:
-        await message.reply_text("❌ **no music is currently playing**")
+        await message.reply_text("❌ **no song is currently playing**")
     temp = []
     for t in queue:
         temp.append(t)
@@ -263,12 +263,12 @@ async def p_cb(b, cb):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("• Gʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}"),
+                InlineKeyboardButton("• PyTgGʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}"),
                 InlineKeyboardButton(
                     "• Cʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"
                 ),
             ],
-            [InlineKeyboardButton("🔙 Go Back", callback_data="menu")],
+            [InlineKeyboardButton("🔙 Back", callback_data="menu")],
         ]
     )
 
@@ -281,7 +281,7 @@ async def p_cb(b, cb):
     if type_ == "playlist":
         queue = que.get(cb.message.chat.id)
         if not queue:
-            await cb.message.edit("❌ **no music is currently playing**")
+            await cb.message.edit("❌ **no song is currently playing**")
         temp = []
         for t in queue:
             temp.append(t)
@@ -311,9 +311,9 @@ async def m_cb(b, cb):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("• Gʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}"),
+                InlineKeyboardButton("• PyTgGʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}"),
                 InlineKeyboardButton(
-                    "• Cʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"
+                    "• PyTgCʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"
                 ),
             ],
             [InlineKeyboardButton("🔙 Go Back", callback_data="menu")],
@@ -366,7 +366,7 @@ async def m_cb(b, cb):
     elif type_ == "playlist":
         queue = que.get(cb.message.chat.id)
         if not queue:
-            await cb.message.edit("❌ **no music is currently playing**")
+            await cb.message.edit("❌ **no song is currently playing**")
         temp = []
         for t in queue:
             temp.append(t)
@@ -486,7 +486,7 @@ async def play(_, message: Message):
     global useer
     if message.chat.id in DISABLED_GROUPS:
         return
-    lel = await message.reply("🔎 **searching...**")
+    lel = await message.reply("🔎 **processing...**")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
     try:
@@ -568,12 +568,12 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("• Mᴇɴᴜ", callback_data="menu"),
+                    InlineKeyboardButton("• Mᴇɴᴜ🤫", callback_data="menu"),
                     InlineKeyboardButton("• Cʟᴏsᴇ", callback_data="cls"),
                 ],
                 [
                     InlineKeyboardButton(
-                        "• Cʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "• 𝐏𝐲𝐓𝐠/𝐌𝐮𝐬𝐢𝐜[𝚜𝚞𝚙𝚙𝚘𝚛𝚝]", url=f"https://t.me/{GROUP_SUPPORT}"
                     )
                 ],
             ]
@@ -592,7 +592,7 @@ async def play(_, message: Message):
         )
     elif urls:
         query = toxt
-        await lel.edit("🔎 **searching...**")
+        await lel.edit("🔎 **processing...**")
         ydl_opts = {"format": "bestaudio[ext=m4a]"}
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
@@ -617,12 +617,12 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("• Mᴇɴᴜ", callback_data="menu"),
+                    InlineKeyboardButton("• Mᴇɴᴜ🤫", callback_data="menu"),
                     InlineKeyboardButton("• Cʟᴏsᴇ", callback_data="cls"),
                 ],
                 [
                     InlineKeyboardButton(
-                        "• Cʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "•𝐏𝐲𝐓𝐠/𝐌𝐮𝐬𝐢𝐜[𝚜𝚞𝚙𝚙𝚘𝚛𝚝]", url=f"https://t.me/{GROUP_SUPPORT}"
                     )
                 ],
             ]
@@ -711,12 +711,12 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("• Mᴇɴᴜ", callback_data="menu"),
+                        InlineKeyboardButton("• Mᴇɴᴜ🤫", callback_data="menu"),
                         InlineKeyboardButton("• Cʟᴏsᴇ", callback_data="cls"),
                     ],
                     [
                         InlineKeyboardButton(
-                            "• Cʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"
+                            "• 𝐏𝐲𝐓𝐠/𝐌𝐮𝐬𝐢𝐜[𝚜𝚞𝚙𝚙𝚘𝚛𝚝]", url=f"https://t.me/{GROUP_SUPPORT}"
                         )
                     ],
                 ]
@@ -819,10 +819,10 @@ async def lol_cb(b, cb):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("• Mᴇɴᴜ", callback_data="menu"),
+                InlineKeyboardButton("• Mᴇɴᴜ🤫", callback_data="menu"),
                 InlineKeyboardButton("• Cʟᴏsᴇ", callback_data="cls"),
             ],
-            [InlineKeyboardButton("• Cʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}")],
+            [InlineKeyboardButton("•𝐏𝐲𝐓𝐠𝐌𝐮𝐬𝐢𝐜[support]", url=f"https://t.me/{GROUP_SUPPORT}")],
         ]
     )
     await generate_cover(title, thumbnail, ctitle)
@@ -842,7 +842,7 @@ async def lol_cb(b, cb):
         await b.send_photo(
             chat_id,
             photo="final.png",
-            caption=f"💡 **Track added to queue »** `{position}`\n\n🏷 **Name:** [{title[:35]}...]({url})\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {r_by.mention}",
+            caption=f"💡 **Track successfully added to queue »** `{position}`\n\n🏷 **Name:** [{title[:35]}...]({url})\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {r_by.mention}",
             reply_markup=keyboard,
         )
     else:
@@ -869,12 +869,12 @@ async def lol_cb(b, cb):
         os.remove("final.png")
 
 
-@Client.on_message(command(["ytp", f"ytp@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["ytplay", f"ytplay@{BOT_USERNAME}"]) & other_filters)
 async def ytplay(_, message: Message):
     global que
     if message.chat.id in DISABLED_GROUPS:
         return
-    lel = await message.reply("🔎 **searching...**")
+    lel = await message.reply("🔎 **processing...**")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
 
@@ -969,10 +969,10 @@ async def ytplay(_, message: Message):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("• Mᴇɴᴜ", callback_data="menu"),
+                InlineKeyboardButton("• Mᴇɴᴜ🤫", callback_data="menu"),
                 InlineKeyboardButton("• Cʟᴏsᴇ", callback_data="cls"),
             ],
-            [InlineKeyboardButton("• Cʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}")],
+            [InlineKeyboardButton("• 𝐏𝐲𝐓𝐠/𝐌𝐮𝐬𝐢𝐜[𝚜𝚞𝚙𝚙𝚘𝚛𝚝]", url=f"https://t.me/{GROUP_SUPPORT}")],
         ]
     )
     message.from_user.first_name
@@ -990,7 +990,7 @@ async def ytplay(_, message: Message):
         await lel.delete()
         await message.reply_photo(
             photo="final.png",
-            caption=f"💡 **Track added to queue »** `{position}`\n\n🏷 **Name:** [{title[:35]}...]({url})\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {message.from_user.mention}",
+            caption=f"💡 **Track successfully added to queue »** `{position}`\n\n🏷 **Name:** [{title[:35]}...]({url})\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {message.from_user.mention}",
             reply_markup=keyboard,
         )
     else:
